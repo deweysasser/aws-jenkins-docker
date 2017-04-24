@@ -10,7 +10,8 @@ RUN \
 RUN wget -O- -q http://s3tools.org/repo/deb-all/stable/s3tools.key | apt-key add -
 RUN wget -O /etc/apt/sources.list.d/s3tools.list http://s3tools.org/repo/deb-all/stable/s3tools.list
 RUN apt-get update
-RUN apt-get install -y s3cmd
+RUN apt-get install -y s3cmd duplicity 
+RUN pip install boto
 
 
 USER jenkins
